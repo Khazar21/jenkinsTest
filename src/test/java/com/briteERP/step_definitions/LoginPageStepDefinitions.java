@@ -15,8 +15,8 @@ public class LoginPageStepDefinitions {
 
     @Given("user is in sign in page")
     public void user_is_in_sign_in_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         odooPage.briteERPDemo.click();
+
     }
 
     @When("user inputs valid {string} and {string}")

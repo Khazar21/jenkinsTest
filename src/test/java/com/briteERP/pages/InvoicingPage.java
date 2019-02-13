@@ -235,6 +235,59 @@ public class InvoicingPage {
         }
 
     }
-
+    public  WebElement module(String mod){
+        switch (mod) {
+            case "customerInvoices":
+                return customerInvoices;
+            case "customerCreditNotes":
+                return customerCreditNotes;
+            case "salesPayments":
+                return salesPayments;
+            case "customers":
+                return customers;
+            case "sellableProducts":
+                return sellableProducts;
+            case "vendorBills":
+                return vendorBills;
+            case "vendorCreditNotes":
+                return vendorCreditNotes;
+            case "vendors":
+                return vendors;
+            case "purchasableProducts":
+                return purchasableProducts;
+            case "invoices":
+                return invoices;
+            case "journalsAudit":
+                return journalsAudit;
+            case "agedPartnerBalance":
+                return agedPartnerBalance;
+            case "taxReports":
+                return taxReport;
+            case "taxes":
+                return taxes;
+            case "fiscalPositions":
+                return fiscalPositions;
+            case "bankAccounts":
+                return bankAccounts;
+            case "journals":
+                return journals;
+            case "paymentTerms":
+                return paymentTerms;
+            case "paymentAcquirers":
+                return paymentAcquirers;
+            default:
+                return null;
+        }
+    }
+    public void clickAllMenuModules(){
+        salesMasterData.click();
+        purchasesDocuments.click();
+        purchasesMasterData.click();
+        reportingManagement.click();
+        pdfReports.click();
+        accounting.click();
+        configurationManagement.click();
+        configurationPayments.click();
+    }
 
 }
