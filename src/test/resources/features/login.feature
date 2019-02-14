@@ -1,5 +1,5 @@
 Feature: Login
-  @wip
+
   Scenario Outline: Positive Login functionality
 
     Given user is in sign in page
