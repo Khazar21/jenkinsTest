@@ -12,3 +12,10 @@ Examples:
 | inm2@info.com                   | alsfuh7we68 |
 | inm5@info.com                   | trt332qWW12 |
 | inm6@info.com                   | trt332qWW13 |
+
+
+Scenario: Search box default value
+Then user should see Search... keyword in a searchbox by default
+
+Scenario: page's default invoices view
+Then user should see invoices listed as list by default
