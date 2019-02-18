@@ -9,7 +9,7 @@ Feature: Invoicing Page
 
 	Scenario: page's default invoices view
 		Then user should see invoices listed as list by default
-	@wip
+
 	Scenario: kanban button functionality
 		When user clicks on kanban view button
 	    Then invoices should be listed as kanban
