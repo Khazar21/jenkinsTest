@@ -50,17 +50,4 @@ public class InvoicingPageStepDefinitions {
         Assert.assertTrue(invoicingPage.kanbanView.getAttribute("class").contains("active"));
     }
 
-    @Then("invoices should be listed as kanban")
-    public void invoices_should_be_listed_as_kanban_ali() {
-        BrowserUtilities.waitForAttributeToContain(invoicingPage.kanbanView, "class", "active");
-        Assert.assertTrue(invoicingPage.kanbanView.getAttribute("class").contains("active"));
-    }
-
-    @Then("invoices should be listed as kanban")
-    public void invoices_should_be_listed_as_kanban_ali_barnch() {
-        BrowserUtilities.waitForAttributeToContain(invoicingPage.kanbanView, "class", "active");
-        Assert.assertTrue(invoicingPage.kanbanView.getAttribute("class").contains("active"));
-    }
-
-
 }
