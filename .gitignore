@@ -1,6 +1,6 @@
 .idea/
 target/
 test-output/
-briteERP.iml
+cucumber_briteERP.iml
 bin/
 DS_Store
