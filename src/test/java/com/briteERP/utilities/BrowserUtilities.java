@@ -38,7 +38,7 @@ public class BrowserUtilities {
         wait.until(ExpectedConditions.titleContains(word));
     }
     public static void waitForClickablility(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 15);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 60);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
@@ -47,12 +47,12 @@ public class BrowserUtilities {
         wait.until(ExpectedConditions.attributeContains(webElement,attribute, value));
     }
     public static void waitForElementToBoVisible(WebElement webElement){
-        WebDriverWait wait= new WebDriverWait(Driver.getDriver(),15);
+        WebDriverWait wait= new WebDriverWait(Driver.getDriver(),60);
         wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
     public static void textToBePresentInElementValue(WebElement webElement) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 15);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 60);
         wait.until(ExpectedConditions.textToBePresentInElement(webElement, "50.000"));
 
     }

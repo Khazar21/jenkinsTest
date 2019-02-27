@@ -1,7 +1,9 @@
 package com.briteERP.pages;
 
+import com.briteERP.utilities.BrowserUtilities;
 import com.briteERP.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -87,29 +89,41 @@ public class InvoicingPage {
     public WebElement paymentCreateButton;
     @FindBy(xpath = "(//li[@class='ui-menu-item']//a)[13]")
     public WebElement productComputerCase;
+
+    @FindBy(xpath = "//button[@class='btn btn-sm btn-default']/../button")
+    public WebElement warningOkay;
+
+    public void getProducts(String product)  {
+        WebElement products= Driver.getDriver().findElement(By.xpath("//li[@class='ui-menu-item']//a[contains(text(),'"+ product+"')]"));
+        BrowserUtilities.waitForClickablility(products);
+
+        products.click();
+    }
+
+
+@FindBy(xpath= "//table[@class='o_list_view table table-condensed table-striped o_list_view_ungrouped']//tr//td[2]")
+public WebElement paymentDate;
+
+    @FindBy(xpath= "(//input[@class='o_input ui-autocomplete-input'])[8]")
+    public WebElement product;
     @FindBy(xpath = "(//td[@class='o_data_cell o_list_text o_required_modifier']//textarea)[1]")
     public WebElement productDescription;
-    @FindBy(xpath = "(//td[@class='o_data_cell o_list_number o_required_modifier'])[1]")
+    @FindBy(xpath = "//input[@name='quantity']")
     public WebElement productQuantity;
     @FindBy(xpath = "(//td[@class='o_data_cell o_list_number o_required_modifier'])[2]")
     public WebElement productUnitPrice;
     @FindBy(xpath = "//td[@class='o_data_cell o_list_number o_readonly_modifier']")
     public WebElement productAmount;
-
     @FindBy(xpath = "//td[@class='o_list_record_delete']//button")
     public WebElement productDelete;
-
     @FindBy(xpath = "(//div[@class='o_radio_item']//input)[3]")
     public WebElement paymentTypeInternalTransfer;
-
-
     @FindBy(xpath = "//button[contains(text(),'Discard')]")
     public WebElement paymentDiscardButton;
-
     @FindBy(xpath = "//table[@class='o_group o_inner_group o_group_col_6']/../..")
     public WebElement paymentSheet;
     @FindBy(xpath = "//input[@name='payment_date']")
-    public WebElement paymentDate;
+    public WebElement paymentDateforExcel;
     @FindBy(xpath = "//ul[@class='ui-autocomplete ui-front ui-menu ui-widget ui-widget-content']/li[4]/a")
     public WebElement draftCreditNoteVendor1;
 
