@@ -49,5 +49,75 @@ public class InvoicingPageStepDefinitions {
         BrowserUtilities.waitForAttributeToContain(invoicingPage.kanbanView, "class", "active");
         Assert.assertTrue(invoicingPage.kanbanView.getAttribute("class").contains("active"));
     }
+    @Given("user clicks on Master Data")
+    public void user_clicks_on_Master_Data() {
+        invoicingPage.purchasesMasterData.click();
+    }
+
+    @When("user clicks on Vendors button")
+    public void user_clicks_on_Vendors_button() {
+        invoicingPage.vendors.click();
+    }
+
+    @Then("user should see Search... keyword is displayed")
+    public void user_should_see_keyword_is_displayed() {
+        Assert.assertEquals(invoicingPage.searchInput.getAttribute("placeholder"), "Search...");
+    }
+
+    @Then("user should see Create button is clickable")
+    public void user_should_see_Create_button_is_clickable() {
+        invoicingPage.createButton.click();
+    }
+
+    @Then("user should see Import button is clickable")
+    public void user_should_see_Import_button_is_clickable() {
+        invoicingPage.importButton.click();
+    }
+
+    @Then("user should see Kanban format button invoices is displayed")
+    public void user_should_see_Kanban_format_button_invoices_is_displayed() {
+        BrowserUtilities.waitForAttributeToContain(invoicingPage.kanbanView, "class", "active");
+        Assert.assertTrue(invoicingPage.kanbanView.getAttribute("class").contains("active"));
+    }
+
+    @Then("user should see Vendors are listed as List format type by default.")
+    public void user_should_see_Vendors_are_listed_as_List_format_type_by_default() {
+        BrowserUtilities.waitForAttributeToContain(invoicingPage.listView, "class", "active");
+        Assert.assertTrue(invoicingPage.listView.getAttribute("class").contains("active"));
+
+    }
+
+    @Then("user should be create an account")
+    public void user_should_be_create_an_account() {
+       invoicingPage.accounting.click();
+    }
+
+    @When("user clicks on Purchasable Products button")
+    public void user_clicks_on_Purchasable_Products_button() {
+        invoicingPage.purchasableProducts.click();
+    }
+
+    @Then("user should see Purchasable Products are listed as List format type by default.")
+    public void user_should_see_Purchasable_Products_are_listed_as_List_format_type_by_default() {
+        BrowserUtilities.waitForAttributeToContain(invoicingPage.listView, "class", "active");
+        Assert.assertTrue(invoicingPage.listView.getAttribute("class").contains("active"));
+    }
+
+    @Then("user should see Product's pictures can appear clicking Kanban format button")
+    public void user_should_see_Product_s_pictures_can_appear_clicking_Kanban_format_button() {
+        BrowserUtilities.waitForAttributeToContain(invoicingPage.kanbanView, "class", "active");
+        Assert.assertTrue(invoicingPage.kanbanView.getAttribute("class").contains("active"));
+    }
+    @Then("user should see Purchasable Products are clicking Load File can be import")
+    public void user_should_see_Purchasable_Products_are_clicking_Load_File_can_be_import() {
+        invoicingPage.importButton.click();
+    }
+
+
+
+
+
+
+
 
 }
