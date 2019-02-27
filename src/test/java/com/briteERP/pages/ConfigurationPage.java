@@ -67,7 +67,6 @@ public class ConfigurationPage {
     @FindBy(xpath = "//button[contains(text(),'Import')]")
     public WebElement importButton;
 
-
     //Import Button in Payment Terms
     @FindBy(xpath = "//label[@class='btn btn-primary']")
     public WebElement loadFile;
@@ -232,18 +231,8 @@ public class ConfigurationPage {
     @FindBy(xpath = "//div[@class='o_form_buttons_edit']//button[@type='button'][contains(text(),'Save')]")
     public WebElement saveInUnpaidInvoices_Create_Vendor;
 
-
-
-
-
-
     @FindBy(xpath = "//input[@name='phone']")
     public WebElement PhoneAdd_Create_Vendor;
-
-
-
-
-
 
     @FindBy(xpath = "//input[@placeholder='Company']")
     public WebElement companyPlaceHolder;
@@ -251,7 +240,14 @@ public class ConfigurationPage {
 
 
 
+    @FindBy(xpath = "//input[@placeholder='Search...']")
+    public WebElement searchInput;
 
+    @FindBy(xpath = "//button[@data-view-type='kanban']")
+    public WebElement listView;
+
+    @FindBy(xpath = "//button[@data-view-type='calendar']")
+    public WebElement kanbanView;
 
 
 
