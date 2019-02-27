@@ -58,7 +58,7 @@ Feature: Invoicing Page
     Then Search More and Credit and Edit options are displayed
 
 
-  @wip
+
   Scenario Outline: product information filled automatically
     When user click on "Purchase Documents"
     When user click on "Vendor Credit Note"
@@ -107,14 +107,19 @@ Feature: Invoicing Page
     And user click on Create button
     Then user should see payment options
 
-
   Scenario:Displaying payment Date
     When user click on "Purchase Documents"
     When user click on "Purchases payments"
     And user click on Create button
     Then user should see current payment Date should display
 
+	Scenario: page's default invoices view
+		Then user should see invoices listed as list by default
 
+
+	Scenario: kanban button functionality
+		When user clicks on kanban view button
+	    Then invoices should be listed as kanban
   Scenario: Verifying Error message displayed
     When user click on "Purchase Documents"
     When user click on "Purchases payments"

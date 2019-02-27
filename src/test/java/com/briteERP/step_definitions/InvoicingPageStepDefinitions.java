@@ -56,6 +56,7 @@ public class InvoicingPageStepDefinitions {
         Assert.assertTrue(invoicingPage.kanbanView.getAttribute("class").contains("active"));
     }
 
+
     @When("user click on {string}")
     public void user_click_on(String mod) {
        invoicingPage.module(mod);
@@ -134,9 +135,6 @@ public class InvoicingPageStepDefinitions {
     }
 
 
-
-
-
     @When("user choose {string}")
     public void user_choose(String product) {
 
@@ -158,25 +156,13 @@ invoicingPage.getProducts(product);
         BrowserUtilities.waitForClickablility(invoicingPage.paymentDiscardButton);
         invoicingPage.paymentDiscardButton.click();
         invoicingPage.warningOkay.click();
-   /*   //  BrowserUtilities.waitForTitleContains("");
-        MenuUser menuUser= new MenuUser();
-        menuUser.invoicing.click();
-        BrowserUtilities.waitForTitleContains(" Odo");*/
-
+   
     }
 
     @When("user choose Computer Case product")
     public void user_choose_Computer_Case_product() {
         invoicingPage.productComputerCase.click();
     }
-
-   /* @Then("user should see all product information accordingly")
-    public void user_should_see_all_product_information_accordingly() {
-        Assert.assertTrue(invoicingPage.productDescription.isDisplayed());
-        Assert.assertTrue(invoicingPage.productQuantity.isDisplayed());
-        Assert.assertTrue(invoicingPage.productUnitPrice.isDisplayed());
-        Assert.assertTrue(invoicingPage.productAmount.isDisplayed());
-    }*/
 
 
     @When("user delete delete quantity")
@@ -256,7 +242,6 @@ invoicingPage.getProducts(product);
     public void system_should_throw_warning_message() {
         Assert.assertEquals(invoicingPage.paymentWarningMessage.getText(), "The record has been modified, your changes will be discarded. Do you want to proceed?");
     }
-
 
 
 }
