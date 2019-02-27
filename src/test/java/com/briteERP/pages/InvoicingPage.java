@@ -237,7 +237,12 @@ public WebElement paymentDate;
     public WebElement cancelButtonOnTaxReports;
     @FindBy (xpath = "//ol/li[@class='active']")
     public WebElement cancelVerifying;
-
+    @FindBy (xpath = "//*[@class='modal-title']")
+    public WebElement innerHeadAgedPartnerBalance;
+    @FindBy (xpath = "//span[contains(text(),'Print')]")
+    public WebElement printInAgedPartnerBalance;
+    @FindBy (xpath = "//span[contains(text(),'Cancel')]")
+    public WebElement cancelInAgedPartnerBalance;
 
     public boolean elementDisplayed(WebElement element) {
         // try find it

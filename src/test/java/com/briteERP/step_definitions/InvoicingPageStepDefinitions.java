@@ -1,9 +1,6 @@
 package com.briteERP.step_definitions;
 
-import com.briteERP.pages.InvoicingPage;
-import com.briteERP.pages.MenuUser;
-import com.briteERP.pages.OdooPage;
-import com.briteERP.pages.SignInPage;
+import com.briteERP.pages.*;
 import com.briteERP.utilities.BrowserUtilities;
 import com.briteERP.utilities.Driver;
 import cucumber.api.java.en.*;
@@ -20,6 +17,7 @@ public class InvoicingPageStepDefinitions {
     InvoicingPage invoicingPage= new InvoicingPage();
     MenuUser menuUser= new MenuUser();
     OdooPage odooPage= new OdooPage();
+    ConfigurationPage configurationPage = new ConfigurationPage();
 
 
     @Given("user is in invoicing page logged as a Manager")
@@ -312,6 +310,63 @@ invoicingPage.getProducts(product);
     public void system_should_throw_warning_message() {
         Assert.assertEquals(invoicingPage.paymentWarningMessage.getText(), "The record has been modified, your changes will be discarded. Do you want to proceed?");
     }
+
+
+    @When("user go to Management Invoices page in reporting")
+    public void user_go_to_Management_Invoices_page_in_reporting() {
+        invoicingPage.reportingManagement.click();
+        invoicingPage.invoices.click();
+    }
+
+    @Then("Bar char should be displayed by default")
+    public void bar_char_should_be_displayed_by_default() {
+        Assert.assertTrue(invoicingPage.barChart.getAttribute("class").contains("active"));
+    }
+
+    @Then("click Pivot format")
+    public void click_Pivot_format() {
+        invoicingPage.pivotView.click();
+    }
+
+    @Then("Pivot for should be displayed on the screen")
+    public void pivot_for_should_be_displayed_on_the_screen() {
+        Assert.assertTrue(invoicingPage.pivotView.isEnabled());
+    }
+
+    @Then("click Chart format")
+    public void click_Chart_format() {
+        invoicingPage.pieChart.click();
+    }
+
+    @Then("Chart format should be displayed on the screen")
+    public void chart_format_should_be_displayed_on_the_screen() {
+        Assert.assertTrue(invoicingPage.pivotView.isEnabled());
+    }
+
+    @When("user clicks on PDF Reports")
+    public void user_clicks_on_PDF_Reports() {
+        invoicingPage.pdfReports.click();
+    }
+
+    @Then("user clicks on Aged Partner Balance")
+    public void user_clicks_on_Aged_Partner_Balance() {
+        invoicingPage.agedPartnerBalance.click();
+    }
+
+    @Then("system should display Aged Partner Balance text")
+    public void system_should_display_Aged_Partner_Balance_text() {
+        Assert.assertTrue(invoicingPage.innerHeadAgedPartnerBalance.isDisplayed());
+    }
+    @Then("system should display Print Button")
+    public void system_should_display_Print_Button() {
+        Assert.assertEquals(true, invoicingPage.printInAgedPartnerBalance.isDisplayed());
+    }
+
+    @Then("system should display Cancel Button")
+    public void system_should_display_Cancel_Button() {
+        Assert.assertEquals(true, invoicingPage.cancelInAgedPartnerBalance.isDisplayed());
+    }
+
 
 
 }
