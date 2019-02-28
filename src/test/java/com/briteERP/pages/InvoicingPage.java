@@ -223,6 +223,10 @@ public class InvoicingPage {
     public WebElement cancelButtonOnTaxReports;
     @FindBy (xpath = "//ol/li[@class='active']")
     public WebElement cancelVerifying;
+    @FindBy (xpath = "//*[@class='modal-title']")
+    public WebElement innerHeadAgedPartnerBalance;
+
+
 
 
     public boolean elementDisplayed(WebElement element) {
