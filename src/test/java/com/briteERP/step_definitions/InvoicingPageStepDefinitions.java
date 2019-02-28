@@ -117,14 +117,6 @@ public class InvoicingPageStepDefinitions {
         invoicingPage.importButton.click();
     }
 
-
-
-
-
-
-
-
-
     @When("user click on {string}")
     public void user_click_on(String mod) {
        invoicingPage.module(mod);
@@ -224,7 +216,7 @@ invoicingPage.getProducts(product);
         BrowserUtilities.waitForClickablility(invoicingPage.paymentDiscardButton);
         invoicingPage.paymentDiscardButton.click();
         invoicingPage.warningOkay.click();
-   
+
     }
 
     @When("user choose Computer Case product")
