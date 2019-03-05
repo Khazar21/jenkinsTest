@@ -44,7 +44,8 @@
                     <testFailureIgnore>true</testFailureIgnore>
 
                     <includes>
-                        <include>**/*CukesRunner.java</include>
+                        <!--<include>**/*CukesRunner.java</include>-->
+                        <include>**/*SmokeTestRunner.java</include>
                     </includes>
                 </configuration>
             </plugin>

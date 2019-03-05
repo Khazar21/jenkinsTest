@@ -18,11 +18,13 @@ public class InvoicingPageStepDefinitions {
     MenuUser menuUser= new MenuUser();
     OdooPage odooPage= new OdooPage();
     ConfigurationPage configurationPage = new ConfigurationPage();
+    MenuGeneral menuGeneral= new MenuGeneral();
 
 
     @Given("user is in invoicing page logged as a Manager")
     public void user_is_in_invoicing_page_logged_as_a_Manager() {
      //   odooPage.briteERPDemo.click();
+        menuGeneral.signIn.click();
         signInPage.signIn("manager");
         BrowserUtilities.waitForTitleContains("Inbox");
         menuUser.invoicing.click();

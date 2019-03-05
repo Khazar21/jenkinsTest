@@ -1,5 +1,6 @@
 package com.briteERP.step_definitions;
 
+import com.briteERP.pages.MenuGeneral;
 import com.briteERP.pages.OdooPage;
 import com.briteERP.pages.SignInPage;
 import com.briteERP.utilities.BrowserUtilities;
@@ -12,10 +13,11 @@ import org.junit.Assert;
 public class LoginPageStepDefinitions {
     OdooPage odooPage= new OdooPage();
     SignInPage signInPage= new SignInPage();
+    MenuGeneral menuGeneral= new MenuGeneral();
 
     @Given("user is in sign in page")
     public void user_is_in_sign_in_page() {
-        odooPage.briteERPDemo.click();
+        menuGeneral.signIn.click();
 
     }
 

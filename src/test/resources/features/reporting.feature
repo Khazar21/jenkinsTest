@@ -33,11 +33,6 @@ Feature: Invoicing page
     When user clicks on PDF Reports
     Then user clicks on Aged Partner Balance
     And system should display Cancel Button
-Feature: Invoicing page
-
-  Background:
-    Given user is in invoicing page logged as a Manager
-
 
   Scenario: Bar Chart format is displayed by default
     When user go to Management Invoices page in reporting

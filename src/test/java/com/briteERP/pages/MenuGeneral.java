@@ -25,7 +25,7 @@ public class MenuGeneral {
     public WebElement presentations;
     @FindBy(xpath = "//span[.='Contact us']")
     public WebElement contactUs;
-    @FindBy(xpath = "//*[.='Sign in']")
+    @FindBy(xpath = "//*[.='Sign in']/..")
     public WebElement signIn;
     @FindBy(xpath = "//li[@class='dropdown open']/a")
     public WebElement loggedInUser;
